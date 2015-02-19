@@ -18,9 +18,11 @@ var AppView = Backbone.View.extend({
 
     this.model.get('songQueue').on('remove', function(model){
       this.songQueueView.render();
+      this.libraryView.render();
     }, this);
 
   },
+  //template: _template('<h1>PlayerHouse</h1>'),
 
 
 
@@ -29,7 +31,7 @@ var AppView = Backbone.View.extend({
       this.playerView.$el,
       this.libraryView.$el,
       this.songQueueView.$el
-    ]);
+    ]).addClass('container');
   }
 
 });
